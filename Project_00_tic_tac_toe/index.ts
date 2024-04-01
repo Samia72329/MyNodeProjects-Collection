@@ -1,6 +1,5 @@
 #! /usr/bin/env/ node
 import inquirer from 'inquirer';
-
 // Define the game board
 type Board = string[][];
 
