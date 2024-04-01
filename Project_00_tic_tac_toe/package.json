@@ -1,9 +1,10 @@
 {
-  "name": "tic_tac_toe",
+  "name": "project_00_tic_tac_toe",
   "version": "1.0.0",
   "description": "\"Tic Tac Toe game implementation using Typescript, Node,js and Inquirer Package by Samia72329\"",
   "main": "index.js",
   "type": "module",
+  "bin" : "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

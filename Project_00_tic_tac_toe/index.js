@@ -1,3 +1,4 @@
+#! /usr/bin/env/ node
 import inquirer from 'inquirer';
 // Initialize an empty 3x3 board
 const board = [
