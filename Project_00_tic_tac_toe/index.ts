@@ -1,5 +1,26 @@
 #! /usr/bin/env/ node
 import inquirer from 'inquirer';
+import chalk from 'chalk';
+const blu = chalk.hex("#0fffeb").bgHex('#0e001a');
+const yel = chalk.hex("#f0f000").bgHex('#1a1700');
+const red = chalk.hex('#ff0000');
+
+console.log(yel(`
+██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ██╗
+██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ██║
+██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗      ██║
+██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝      ╚═╝
+╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗    ██╗
+ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝    ╚═╝
+`));
+
+console.log(blu(`
+            0X00X00X00X00X00X00X00X00X00X00X00X00X00X00X0X
+            0XXXX    ╔╦╗┬┌─┐  ╔╦╗┌─┐┌─┐  ╔╦╗┌─┐┌─┐   XXXX0             
+            0XXXX     ║ ││     ║ ├─┤│     ║ │ │├┤    XXXX0             
+            0XXXX     ╩ ┴└─┘   ╩ ┴ ┴└─┘   ╩ └─┘└─┘   XXXX0             
+            0X00X00X00X00X00X00X00X00X00X00X00X00X00X00X0X
+`))
 // Define the game board
 type Board = string[][];
 
@@ -60,12 +81,12 @@ async function playerMove(player: string) {
             {
                 type: 'input',
                 name: 'row',
-                message: `Player ${player}, enter row (1-3):`
+                message: yel(`Player ${player}, enter row (1-3):`)
             },
             {
                 type: 'input',
                 name: 'col',
-                message: `Player ${player}, enter column (1-3):`
+                message: blu(`Player ${player}, enter column (1-3):`)
             }
         ]);
         const row = parseInt(answer.row) - 1;
@@ -74,7 +95,7 @@ async function playerMove(player: string) {
             board[row][col] = player;
             break;
         } else {
-            console.log('Invalid move. Please try again.');
+            console.log(red('Invalid move. Please try again.'));
         }
     }
 }
@@ -109,7 +130,7 @@ async function startGame() {
         {
             type: 'confirm',
             name: 'playAgain',
-            message: 'Do you want to play again?'
+            message: blu('Do you want to play again?')
         }
     ]);
 
@@ -117,7 +138,10 @@ async function startGame() {
         resetBoard();
         startGame();
     } else {
-        console.log('Thanks for playing!');
+       console.log(blu(`
+ +-+-+-+-+-+-+ +-+-+-+ +-+-+-+-+-+-+-+
+ |T|h|a|n|k|s| |f|o|r| |P|l|a|y|i|n|g|
+ +-+-+-+-+-+-+ +-+-+-+ +-+-+-+-+-+-+-+`))
     }
 }
 
