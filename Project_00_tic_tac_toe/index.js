@@ -1,4 +1,4 @@
-#! /usr/bin/env/ node
+#! /usr/bin/env node
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 const blu = chalk.hex("#0fffeb").bgHex('#0e001a');

@@ -1,6 +1,6 @@
 {
   "name": "project_00_tic_tac_toe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "\"Tic Tac Toe game implementation using Typescript, Node,js and Inquirer Package by Samia72329\"",
   "main": "index.js",
   "type": "module",
